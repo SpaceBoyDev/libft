@@ -6,7 +6,7 @@ AR = ar
 
 ARFLAGS = -rc
 
-CFLAGS += -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
@@ -78,3 +78,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+.DEFAULT: all
