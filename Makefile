@@ -66,8 +66,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus: $(BNS)
-	$(AR) $(ARFLAGS) $(NAME) $(BNS)
+%.o: %.c
+	$(CC) $(CFLAGS) $< -o $@ -c
+
+bonus:
+	make SRCS="$(BONUS)"
 
 clean:
 	$(RM) $(OBJS) $(BNS)
